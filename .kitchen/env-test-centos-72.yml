@@ -1,0 +1,341 @@
+---
+data_container:
+  Id: 228eb312dc0fad7bb4dd70d6e37d4b39ec7bb00ef3138d38220bf25fc77def6c
+  Created: '2016-12-23T15:46:27.136415088Z'
+  Path: "/usr/sbin/sshd"
+  Args:
+  - "-D"
+  - "-p"
+  - '22'
+  - "-o"
+  - UseDNS=no
+  - "-o"
+  - UsePrivilegeSeparation=no
+  State:
+    Status: running
+    Running: true
+    Paused: false
+    Restarting: false
+    OOMKilled: false
+    Dead: false
+    Pid: 7535
+    ExitCode: 0
+    Error: ''
+    StartedAt: '2016-12-23T15:46:27.862230159Z'
+    FinishedAt: '0001-01-01T00:00:00Z'
+  Image: sha256:89f8b7258d937263bc323c204f07af49c51904c0f916eb040a21b382ac94ae83
+  ResolvConfPath: "/var/lib/docker/containers/228eb312dc0fad7bb4dd70d6e37d4b39ec7bb00ef3138d38220bf25fc77def6c/resolv.conf"
+  HostnamePath: "/var/lib/docker/containers/228eb312dc0fad7bb4dd70d6e37d4b39ec7bb00ef3138d38220bf25fc77def6c/hostname"
+  HostsPath: "/var/lib/docker/containers/228eb312dc0fad7bb4dd70d6e37d4b39ec7bb00ef3138d38220bf25fc77def6c/hosts"
+  LogPath: "/var/lib/docker/containers/228eb312dc0fad7bb4dd70d6e37d4b39ec7bb00ef3138d38220bf25fc77def6c/228eb312dc0fad7bb4dd70d6e37d4b39ec7bb00ef3138d38220bf25fc77def6c-json.log"
+  Name: "/cookbook-bind9dns-env-test-centos-72-data"
+  RestartCount: 0
+  Driver: aufs
+  MountLabel: ''
+  ProcessLabel: ''
+  AppArmorProfile: ''
+  ExecIDs: 
+  HostConfig:
+    Binds: 
+    ContainerIDFile: ''
+    LogConfig:
+      Type: json-file
+      Config: {}
+    NetworkMode: default
+    PortBindings:
+      22/tcp:
+      - HostIp: ''
+        HostPort: ''
+    RestartPolicy:
+      Name: ''
+      MaximumRetryCount: 0
+    AutoRemove: false
+    VolumeDriver: ''
+    VolumesFrom: 
+    CapAdd: 
+    CapDrop: 
+    Dns: 
+    DnsOptions: 
+    DnsSearch: 
+    ExtraHosts: 
+    GroupAdd: 
+    IpcMode: ''
+    Cgroup: ''
+    Links: 
+    OomScoreAdj: 0
+    PidMode: ''
+    Privileged: false
+    PublishAllPorts: true
+    ReadonlyRootfs: false
+    SecurityOpt: 
+    UTSMode: ''
+    UsernsMode: ''
+    ShmSize: 67108864
+    Runtime: runc
+    ConsoleSize:
+    - 0
+    - 0
+    Isolation: ''
+    CpuShares: 0
+    Memory: 0
+    CgroupParent: ''
+    BlkioWeight: 0
+    BlkioWeightDevice: 
+    BlkioDeviceReadBps: 
+    BlkioDeviceWriteBps: 
+    BlkioDeviceReadIOps: 
+    BlkioDeviceWriteIOps: 
+    CpuPeriod: 0
+    CpuQuota: 0
+    CpusetCpus: ''
+    CpusetMems: ''
+    Devices: 
+    DiskQuota: 0
+    KernelMemory: 0
+    MemoryReservation: 0
+    MemorySwap: 0
+    MemorySwappiness: -1
+    OomKillDisable: false
+    PidsLimit: 0
+    Ulimits: 
+    CpuCount: 0
+    CpuPercent: 0
+    IOMaximumIOps: 0
+    IOMaximumBandwidth: 0
+  GraphDriver:
+    Name: aufs
+    Data: 
+  Volumes:
+    "/opt/kitchen": "/var/lib/docker/volumes/a9a6152f2ef68a7881c15339c7e79e34f87e4c36721052702203aca752147876/_data"
+    "/opt/verifier": "/var/lib/docker/volumes/11a0fd19fab69c39cbe5494da93f256ebddae714d1ce9645b840384316358840/_data"
+  VolumesRW:
+    "/opt/kitchen": true
+    "/opt/verifier": true
+  Config:
+    Hostname: 228eb312dc0f
+    Domainname: ''
+    User: ''
+    AttachStdin: false
+    AttachStdout: false
+    AttachStderr: false
+    Tty: false
+    OpenStdin: false
+    StdinOnce: false
+    Env:
+    - PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    - LANG=en_US.UTF-8
+    Cmd:
+    - "/usr/sbin/sshd"
+    - "-D"
+    - "-p"
+    - '22'
+    - "-o"
+    - UseDNS=no
+    - "-o"
+    - UsePrivilegeSeparation=no
+    Image: someara/kitchen-cache:latest
+    Volumes:
+      "/opt/kitchen": {}
+      "/opt/verifier": {}
+    WorkingDir: ''
+    Entrypoint: 
+    OnBuild: 
+    Labels:
+      License: GPLv2
+      Vendor: CentOS
+    MacAddress: ''
+    NetworkDisabled: false
+    ExposedPorts:
+      22/tcp: {}
+    VolumeDriver: ''
+    Memory: 0
+    MemorySwap: 0
+    CpuShares: 0
+    Cpuset: ''
+  NetworkSettings:
+    Bridge: ''
+    SandboxID: 7cc8d9120801bdab99336a20a798b5f6a9d41be596e7be030d44867aaba45235
+    HairpinMode: false
+    LinkLocalIPv6Address: ''
+    LinkLocalIPv6PrefixLen: 0
+    Ports:
+      22/tcp:
+      - HostIp: 0.0.0.0
+        HostPort: '32768'
+    SandboxKey: "/var/run/docker/netns/7cc8d9120801"
+    SecondaryIPAddresses: 
+    SecondaryIPv6Addresses: 
+    EndpointID: 184993c9107e040b00a6fbb4305e2b053caabd91481468e1099e8d84794ee7e3
+    Gateway: 172.17.0.1
+    GlobalIPv6Address: ''
+    GlobalIPv6PrefixLen: 0
+    IPAddress: 172.17.0.2
+    IPPrefixLen: 16
+    IPv6Gateway: ''
+    MacAddress: 02:42:ac:11:00:02
+work_image: cookbook-bind9dns-env-test-centos-72
+runner_container:
+  Id: 20c1d2116cee7e2877a6523eee21ba1864514b1a6e163053b1339892b8e72d62
+  Created: '2016-12-23T15:46:27.998477739Z'
+  Path: "/usr/lib/systemd/systemd"
+  Args: []
+  State:
+    Status: running
+    Running: true
+    Paused: false
+    Restarting: false
+    OOMKilled: false
+    Dead: false
+    Pid: 7610
+    ExitCode: 0
+    Error: ''
+    StartedAt: '2016-12-23T15:46:28.443300945Z'
+    FinishedAt: '0001-01-01T00:00:00Z'
+  Image: sha256:b88c898f0d5a8fb4c7ec58d87fb86d4189cf8a5171dc551765449a676fadd102
+  ResolvConfPath: "/var/lib/docker/containers/20c1d2116cee7e2877a6523eee21ba1864514b1a6e163053b1339892b8e72d62/resolv.conf"
+  HostnamePath: "/var/lib/docker/containers/20c1d2116cee7e2877a6523eee21ba1864514b1a6e163053b1339892b8e72d62/hostname"
+  HostsPath: "/var/lib/docker/containers/20c1d2116cee7e2877a6523eee21ba1864514b1a6e163053b1339892b8e72d62/hosts"
+  LogPath: "/var/lib/docker/containers/20c1d2116cee7e2877a6523eee21ba1864514b1a6e163053b1339892b8e72d62/20c1d2116cee7e2877a6523eee21ba1864514b1a6e163053b1339892b8e72d62-json.log"
+  Name: "/cookbook-bind9dns-env-test-centos-72"
+  RestartCount: 0
+  Driver: aufs
+  MountLabel: ''
+  ProcessLabel: ''
+  AppArmorProfile: ''
+  ExecIDs: 
+  HostConfig:
+    Binds: []
+    ContainerIDFile: ''
+    LogConfig:
+      Type: json-file
+      Config: {}
+    NetworkMode: bridge
+    PortBindings: {}
+    RestartPolicy:
+      Name: ''
+      MaximumRetryCount: 0
+    AutoRemove: false
+    VolumeDriver: ''
+    VolumesFrom:
+    - chef-latest
+    - cookbook-bind9dns-env-test-centos-72-data
+    CapAdd: []
+    CapDrop: []
+    Dns: 
+    DnsOptions: 
+    DnsSearch: 
+    ExtraHosts: 
+    GroupAdd: 
+    IpcMode: ''
+    Cgroup: ''
+    Links: 
+    OomScoreAdj: 0
+    PidMode: ''
+    Privileged: true
+    PublishAllPorts: false
+    ReadonlyRootfs: false
+    SecurityOpt: []
+    UTSMode: ''
+    UsernsMode: ''
+    ShmSize: 67108864
+    Runtime: runc
+    ConsoleSize:
+    - 0
+    - 0
+    Isolation: ''
+    CpuShares: 0
+    Memory: 0
+    CgroupParent: ''
+    BlkioWeight: 0
+    BlkioWeightDevice: 
+    BlkioDeviceReadBps: 
+    BlkioDeviceWriteBps: 
+    BlkioDeviceReadIOps: 
+    BlkioDeviceWriteIOps: 
+    CpuPeriod: 0
+    CpuQuota: 0
+    CpusetCpus: ''
+    CpusetMems: ''
+    Devices: 
+    DiskQuota: 0
+    KernelMemory: 0
+    MemoryReservation: 0
+    MemorySwap: 0
+    MemorySwappiness: -1
+    OomKillDisable: false
+    PidsLimit: 0
+    Ulimits: 
+    CpuCount: 0
+    CpuPercent: 0
+    IOMaximumIOps: 0
+    IOMaximumBandwidth: 0
+  GraphDriver:
+    Name: aufs
+    Data: 
+  Volumes:
+    "/opt/chef": "/var/lib/docker/volumes/80b95af19c4ae22d43f9e5d1d944c7439343a3174affb14dcf444a6a8598df2a/_data"
+    "/opt/kitchen": "/var/lib/docker/volumes/a9a6152f2ef68a7881c15339c7e79e34f87e4c36721052702203aca752147876/_data"
+    "/opt/verifier": "/var/lib/docker/volumes/11a0fd19fab69c39cbe5494da93f256ebddae714d1ce9645b840384316358840/_data"
+    "[": "/var/lib/docker/volumes/e330787e98e52232c7dc724be242fa7df8aaf4399f2daf5638a7745add814053/_data"
+    "]": "/var/lib/docker/volumes/8ae80df326807362f795cf7fa5ba6a3ae38490f26a7f3f342463cd48f22b704d/_data"
+  VolumesRW:
+    "/opt/chef": true
+    "/opt/kitchen": true
+    "/opt/verifier": true
+    "[": true
+    "]": true
+  Config:
+    Hostname: 20c1d2116cee
+    Domainname: ''
+    User: ''
+    AttachStdin: false
+    AttachStdout: false
+    AttachStderr: false
+    Tty: false
+    OpenStdin: false
+    StdinOnce: false
+    Env:
+    - PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    Cmd:
+    - "/usr/lib/systemd/systemd"
+    Image: cookbook-bind9dns-env-test-centos-72:latest
+    Volumes: 
+    WorkingDir: ''
+    Entrypoint: 
+    OnBuild: 
+    Labels:
+      build-date: '20161214'
+      license: GPLv2
+      name: CentOS Base Image
+      vendor: CentOS
+    MacAddress: ''
+    NetworkDisabled: false
+    ExposedPorts: 
+    VolumeDriver: ''
+    Memory: 0
+    MemorySwap: 0
+    CpuShares: 0
+    Cpuset: ''
+  NetworkSettings:
+    Bridge: ''
+    SandboxID: 08794b3c529e16872a1753b4e515199946326f5deba5ae90f3a7a385e74f21f6
+    HairpinMode: false
+    LinkLocalIPv6Address: ''
+    LinkLocalIPv6PrefixLen: 0
+    Ports: {}
+    SandboxKey: "/var/run/docker/netns/08794b3c529e"
+    SecondaryIPAddresses: 
+    SecondaryIPv6Addresses: 
+    EndpointID: 7d5a0ca8e66925aec696cfb2d584778f8b8a9bb4012b6a763fd17c93540b0921
+    Gateway: 172.17.0.1
+    GlobalIPv6Address: ''
+    GlobalIPv6PrefixLen: 0
+    IPAddress: 172.17.0.3
+    IPPrefixLen: 16
+    IPv6Gateway: ''
+    MacAddress: 02:42:ac:11:00:03
+platform_image: centos:7
+instance_name: cookbook-bind9dns-env-test-centos-72
+instance_platform_name: centos-7.2
+image_prefix: 
+last_action: converge

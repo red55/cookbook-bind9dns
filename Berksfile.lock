@@ -1,0 +1,11 @@
+DEPENDENCIES
+  bind9dns
+    path: .
+    metadata: true
+  export-node
+    git: https://github.com/red55/export-node.git
+    revision: 8498864e4998f9c3ad6ec31e3b37ab67d5205890
+
+GRAPH
+  bind9dns (0.1.0)
+  export-node (1.0.1)

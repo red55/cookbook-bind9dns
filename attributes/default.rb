@@ -1,0 +1,1 @@
+default['bind9dns']['options']['path'] = '/var/'
