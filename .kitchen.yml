@@ -42,4 +42,5 @@ suites:
         log_level: :debug
     data_bags_path: "test/integration/data_bags"
     run_list:
+      - recipe[bind9dns::install]
       - recipe[bind9dns::default]    

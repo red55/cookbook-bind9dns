@@ -20,13 +20,16 @@
 // configuration located in /usr/share/doc/bind-{version}/Bv9ARM.html
 
 options {
-	listen-on port 53 { 127.0.0.1; };
-	listen-on-v6 port 53 { ::1; };
-	directory 	"/var/named";
-	dump-file 	"/var/named/data/cache_dump.db";
-	statistics-file "/var/named/data/named_stats.txt";
-	memstatistics-file "/var/named/data/named_mem_stats.txt";
-	allow-query     { localhost; };
+	<% @LISTENON.keys.each do |p| %>
+	
+	listen-on port <%= p%> { <%@LISTENON[p].each do |ip|%> <%= ip%>;<%end%> };
+	<%end%>
+	//listen-on-v6 port 53 { ::1 };
+	directory 	"<%=@node['bind9dns']['options']['directory']%>";
+	dump-file 	"<%=@node['bind9dns']['options']['directory']%>/data/cache_dump.db";
+	statistics-file "<%=@node['bind9dns']['options']['directory']%>/data/named_stats.txt";
+	memstatistics-file "<%=@node['bind9dns']['options']['directory']%>/data/named_mem_stats.txt";
+	allow-query     { <%@ALLOW_QUERY.each do |q| %><%=q%>;<%end%> };
 
 	/* 
 	 - If you are building an AUTHORITATIVE DNS server, do NOT enable recursion.
@@ -38,18 +41,18 @@ options {
 	   attacks. Implementing BCP38 within your network would greatly
 	   reduce such attack surface 
 	*/
-	recursion yes;
+	recursion <%=@RECURSION ? 'yes' : 'no'%>;
 
-	dnssec-enable yes;
-	dnssec-validation yes;
+	dnssec-enable <%=@DNSSEC_ENABLE? 'yes' : 'no'%>;
+	dnssec-validation <%=@DNSSEC_VALIDATION? 'yes' : 'no'%>;
 
 	/* Path to ISC DLV key */
-	bindkeys-file "/etc/named.iscdlv.key";
+	bindkeys-file "<%=@BINDKEYS_FILE%>";
 
-	managed-keys-directory "/var/named/dynamic";
+	managed-keys-directory "<%=@MANGED_KEYS_DIR%>";
 
-	pid-file "/run/named/named.pid";
-	session-keyfile "/run/named/session.key";
+	pid-file "<%=@PID_FILE%>";
+	session-keyfile "<%= @SESSION_KEYFILE%>";
 };
 
 logging {
@@ -59,19 +62,25 @@ logging {
         };
 };
 
-zone "." IN {
-	type hint;
-	file "named.ca";
-};
-
 <% @ACLs.each do |acl|%>
-acl "<%= acl %>" {
+acl "<%= acl.name %>" {
   <% acl.nets.each do |net| %>
     <%= net%>;
   <% end %>
 };
-
 <% end %>
+
+<% @ZONES.each do |z|%>
+zone "<%=z.name%>" IN {
+	type <%=z.type%>;
+	<%if z.type == 'forward' then%>
+	forward <%=z.forward%>;
+	forwarders {<%z.forwarders.each do |f|%> <%=f%>;<%end%>};
+	<%else%>
+	file "<%=z.file %>";
+	<%end%>
+};
+<%end%>
 
 include "/etc/named.rfc1912.zones";
 include "/etc/named.root.key";
