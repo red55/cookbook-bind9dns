@@ -75,7 +75,7 @@ zone "<%=z.name%>" IN {
 	type <%=z.type%>;
 	<%if z.type == 'forward' then%>
 	forward <%=z.forward%>;
-	forwarders {<%z.forwarders.each do |f|%> <%=f%>;<%end%>};
+	forwarders {<%z.forwarders.each do |f|%> <%ip, port = f.split(':')%> <%=ip%> <%unless port.nil? then%> port <%=port%> <%end%>;<%end%>};
 	<%else%>
 	file "<%=z.file %>";
 	<%end%>
