@@ -3,17 +3,8 @@
 # end
 
 bind9dns_zone '.' do
-  type 'forward'
-  forward 'only'
-  forwarders %w(192.168.104.101 192.168.104.102)
-  # type 'hint'
-  # file 'named.ca'
-end
-
-bind9dns_zone 'csi-group.local' do
-  type 'forward'
-  forward 'only'
-  forwarders %w(192.168.104.101 192.168.104.102)
+  type 'hint'
+  file 'named.ca'
 end
 
 bind9dns 'named' do
