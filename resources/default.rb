@@ -15,7 +15,7 @@ attribute :bindkeys_file, kind_of: String, required: false, default: node['bind9
 attribute :managed_keys_directory, kind_of: String, required: false, default: node['bind9dns']['options']['managed-keys-directory']
 attribute :pid_file, kind_of: String, required: false, default: node['bind9dns']['options']['pid-file']
 attribute :session_keyfile, kind_of: String, required: false, default: node['bind9dns']['options']['session-keyfile']
-
+attribute :cookbook, kind_of: String, required: true, default: 'bind9dns'
 
 
 attr_accessor :exists # This is a standard ruby accessor, use this to set flags for current state.

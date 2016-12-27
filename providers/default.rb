@@ -45,6 +45,7 @@ def configure
     )
     source 'named.conf.erb'
     action :create
+    cookbook new_resource.cookbook
     notifies :check_config, "bind9dns[#{new_resource.name}]", :immediately
   end
 
