@@ -1,7 +1,5 @@
 class Chef
   class Provider
-
-
     def copy_attributes(new_resource, current_resource)
 
       ignoreivs = [
@@ -21,7 +19,5 @@ class Chef
         Chef::Log.info("Set instance variable for: #{iv}")
       end
     end
-
-
   end
 end

@@ -2,7 +2,7 @@ use_inline_resources
 
 action :create do
   unless @current_resource.exists
-    converge_by("Creating Zone #{@new_resource.name}") do      
+    converge_by("Creating Zone #{@new_resource.name}") do
       @new_resource.updated_by_last_action(create)
     end
   end
