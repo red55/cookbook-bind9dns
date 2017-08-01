@@ -35,6 +35,9 @@ verifier:
 
 suites:
   - name: env-test
+    driver:
+      ports:
+        - 8053:53/udp
     provisioner:
       client_rb:
         environment: _default
