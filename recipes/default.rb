@@ -9,9 +9,10 @@ end
 
 bind9dns 'named' do
   recursion true
-  action :configure
-  listen_on ['127.0.0.1:53']
-  notifies :restart, 'service[named]', :delayed
+  action [:configure]
+  listen_on ['127.01-53']
+  listen_on ['::1-53']
+  notifies :reload, 'service[named]', :delayed
 end
 
 service 'named' do

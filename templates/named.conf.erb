@@ -20,11 +20,15 @@
 // configuration located in /usr/share/doc/bind-{version}/Bv9ARM.html
 
 options {
-	<% @LISTENON.keys.each do |p| %>
 	
+	<% @LISTENON.keys.each do |p| %>	
 	listen-on port <%= p%> { <%@LISTENON[p].each do |ip|%> <%= ip%>;<%end%> };
 	<%end%>
-	//listen-on-v6 port 53 { ::1 };
+	
+	<% @LISTENON_V6.keys.each do |p| %>
+	listen-on-v6 port <%= p%> { <%@LISTENON_V6[p].each do |ip|%> <%= ip%>;<%end%> };
+	<%end%>
+
 	directory 	"<%=@node['bind9dns']['options']['directory']%>";
 	dump-file 	"<%=@node['bind9dns']['options']['directory']%>/data/cache_dump.db";
 	statistics-file "<%=@node['bind9dns']['options']['directory']%>/data/named_stats.txt";
@@ -49,7 +53,7 @@ options {
 	/* Path to ISC DLV key */
 	bindkeys-file "<%=@BINDKEYS_FILE%>";
 
-	managed-keys-directory "<%=@MANGED_KEYS_DIR%>";
+	managed-keys-directory "<%=@MANAGED_KEYS_DIR%>";
 
 	pid-file "<%=@PID_FILE%>";
 	session-keyfile "<%= @SESSION_KEYFILE%>";
