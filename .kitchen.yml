@@ -47,3 +47,4 @@ suites:
     run_list:
       - recipe[bind9dns::install]
       - recipe[bind9dns::default]    
+      - recipe[bind9dns_test::default]

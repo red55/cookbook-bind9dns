@@ -12,11 +12,10 @@ bind9dns 'named' do
   action [:configure]
   listen_on ['any-53']
   listen_on_v6 ['none']
-  allow_query ['0.0.0.0/0']
   notifies :reload, 'service[named]', :delayed
 end
 
 service 'named' do
   supports [:start, :stop, :restart, :reload, :status]
-  action :start
+  action [:enable, :start]
 end

@@ -6,4 +6,7 @@ end
 
 company_cookbook('export-node', '>= 0.0.0', options: [branch: 'master'])
 
+group :integration do
+  cookbook 'bind9dns_test', path: 'test/fixtures/cookbook/bind9dns_test'
+end
 metadata
