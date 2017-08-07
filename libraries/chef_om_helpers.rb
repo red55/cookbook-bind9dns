@@ -1,7 +1,6 @@
 class Chef
   class Provider
     def copy_attributes(new_resource, current_resource)
-
       ignoreivs = [
         :@name, :@run_context, :@noop, :@before, :@params, :@provider,
         :@allowed_actions, :@action, :@updated, :@updated_by_last_action,
