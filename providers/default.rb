@@ -3,7 +3,7 @@ use_inline_resources
 def build_listenon(a)
   by_port = {}
   a.each do |l|
-    ip, port = l.split(':')
+    ip, port = l.split('-')
     port = '53' if port.nil?
     by_port[port] = [] if by_port[port].nil?
     by_port[port].push(ip)
@@ -33,12 +33,13 @@ def configure
     variables(
       ACLs: acls,
       LISTENON: build_listenon(new_resource.listen_on),
+      LISTENON_V6: build_listenon(new_resource.listen_on_v6),
       ALLOW_QUERY: new_resource.allow_query,
       RECURSION: new_resource.recursion,
       DNSSEC_ENABLE: new_resource.dnssec_enable,
       DNSSEC_VALIDATION: new_resource.dnssec_validation,
       BINDKEYS_FILE: new_resource.bindkeys_file,
-      MANGED_KEYS_DIR: new_resource.managed_keys_directory,
+      MANAGED_KEYS_DIR: new_resource.managed_keys_directory,
       PID_FILE: new_resource.pid_file,
       SESSION_KEYFILE: new_resource.session_keyfile,
       ZONES: zones
